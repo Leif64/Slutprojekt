@@ -20,11 +20,19 @@ class JumpingPlayer : Player
     {
         base.Update(collectible, platform);
 
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE) && isOnGround)
+        try
         {
-            isJumping = true;
-            isOnGround = false;
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE) && isOnGround)
+            {
+                isJumping = true;
+                isOnGround = false;
+            }
         }
+        catch
+        {
+
+        }
+   
 
         if (isJumping)
         {
